@@ -1,0 +1,157 @@
+/* Universal reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3a8031;
+    padding: 15px 20px;
+}
+
+nav img {
+    height: 50px;
+}
+
+nav form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    
+}
+
+nav .nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Search Container and Input Styling */
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-container .search-input {
+    width: 200px; /* Set the width of the input */
+    height: 30px; /* Adjust the height as per your design */
+    padding-left: 30px; /* Space for the search icon */
+    padding-right: 40px; /* Add some padding for the button */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Search Button and Icon Styling */
+.search-container .search-button {
+    position: absolute;
+    left: 5px; /* Align button left inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container .search-button img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left:160px;
+}
+
+/* Button Styling */
+nav button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+/* Links for all items */
+.all {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.all a {
+    text-decoration: none;
+    color: #3a8031;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* .all a:hover {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+} */
+
+/* Cart Button Styling */
+.cart {
+    position: relative;
+    left: 600px;
+    padding: 10px 25px;
+    border: none;
+    background-color: #ff4800;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+    
+}
+
+.cart:hover {
+    background-color: #d43800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav form {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .all {
+        flex-direction: column;
+        align-items: center;
+    }
+}
