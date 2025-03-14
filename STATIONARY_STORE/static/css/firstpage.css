@@ -132,6 +132,62 @@ nav button:hover {
     background-color: #d43800;
 }
 
+.fru h3 {
+    padding: 30PX;
+    text-align: start;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+}
+
+.fruits {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between each fruit container */
+    flex-wrap: wrap; /* Allows the items to wrap to the next line if there is insufficient space */
+    overflow-x: scroll;
+}
+
+.fruit-container {
+    flex: 1 1 22%; /* Distribute space equally, taking up approximately 22% of the width of the parent container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    justify-content: space-between; /* Space out the content evenly */
+    padding: 15px;
+    border: 1px solid #ddd; /* Optional: Border for better visualization */
+    box-sizing: border-box;
+   
+}
+
+.fruit-image img {
+    max-width: 100%; /* Ensures images fit the container */
+    height: 400px; /* Adjust the height as per your design */
+}
+/* .img4 {
+    max-width: 100%; 
+    height: 400px;
+} */
+
+.fruit-details {
+    text-align: center;
+    padding:5px;
+
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {

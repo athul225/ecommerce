@@ -43,3 +43,4 @@ def logout(request):
         return redirect(login)
     else:
         return redirect(login)
+    
