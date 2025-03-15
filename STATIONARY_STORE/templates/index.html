@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <a href="#"><img src="{% static 'image/image.png' %}" alt="Logo" height="100px"></a>
+
+            <form action="#" method="get">
+                <div class="search-container">
+                    <input type="text" name="search" placeholder="Search Products..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <img src="https://media.istockphoto.com/id/942243214/vector/search-icon.jpg?s=612x612&w=0&k=20&c=hlfzfYxoj7wyLKxwGf8AuU6RmVDguLVK58CdXiU3lgs=" alt="search" height="20px" width="20px">
+                    </button>
+                </div>
+            </form>
+
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="../">Logout</a>
+            </div>
+        </nav>
+
+        <div class="all">
+            <a href="#">Vegtables</a>
+            <a href="#">Fruits</a>
+            <a href="#">Chocolates</a>
+            <a href="#">Tea</a>
+            <a href="#">Noodles</a>
+            <button type="submit" class="cart">Cart</button>
+        </div>
+
+        <div class="products">
+            {% for product in products %}
+            <div class="product">
+                <img src="{% static 'image/image copy 4.png' %}" alt="{{ product.name }}" class="product">
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="ad">
+            <img src="{% static 'image/image copy 2.png' %}" alt="veg" height="800px" width="100%">
+        </div>
+    </div>
+</body>
+</html>
