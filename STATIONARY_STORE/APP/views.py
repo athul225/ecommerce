@@ -41,7 +41,7 @@ def firstpage(request):
 
 def logout(request):
     if request.user.is_authenticated:
-        auth.logout(request)
+        Users.logout(request)
         return redirect(login)
     else:
         return redirect(login)

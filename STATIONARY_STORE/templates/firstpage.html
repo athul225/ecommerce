@@ -44,7 +44,7 @@
         <div class="fru">
             <h3>Fruits</h3>
         </div>
-        <div class="fruits">
+        <!-- <div class="fruits">
             <div class="fruit-container">
                 <div class="fruit-image">
                     <img src="{% static 'image/image copy 3.png' %}" alt="Apple">
@@ -164,8 +164,18 @@
                     <button type="submit" class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
+        </div> -->
+        <div class="products">
+            {% for product in products %}
+            <div class="product">
+                <img src="{% static 'image/image copy 4.png' %}" alt="{{ product.name }}" class="product">
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            {% endfor %}
         </div>
-        
+
     </div>
 </body>
 </html>

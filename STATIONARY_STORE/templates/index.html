@@ -38,20 +38,34 @@
             <button type="submit" class="cart">Cart</button>
         </div>
 
-        <div class="products">
-            {% for product in products %}
-            <div class="product">
-                <img src="{% static 'image/image copy 4.png' %}" alt="{{ product.name }}" class="product">
-                <h3>{{ product.name }}</h3>
-                <p>${{ product.price }}</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            {% endfor %}
-        </div>
+    
+        <!-- Product Section -->
+        <div class="product1">
+            <!-- Image/Arrow Icon -->
+            <img src="https://cdn-icons-png.freepik.com/256/8467/8467062.png?semt=ais_hybrid" height="200px">
+            
+            <!-- Form for Uploading Product Info -->
+            <form action="../index" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="image">Upload Image:</label>
+                    <input type="file" name="image" id="image">
+                </div>
 
-        <div class="ad">
-            <img src="{% static 'image/image copy 2.png' %}" alt="veg" height="800px" width="100%">
+                <div class="form-group">
+                    <label for="description">Enter Description:</label>
+                    <input type="text" name="description" id="description">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Enter Price:</label>
+                    <input type="text" name="price" id="price">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
         </div>
-    </div>
 </body>
 </html>
