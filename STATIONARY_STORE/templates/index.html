@@ -28,7 +28,7 @@
                 <a href="../">Logout</a>
             </div>
         </nav>
-
+<!-- 
         <div class="all">
             <a href="#">Vegtables</a>
             <a href="#">Fruits</a>
@@ -36,7 +36,7 @@
             <a href="#">Tea</a>
             <a href="#">Noodles</a>
             <button type="submit" class="cart">Cart</button>
-        </div>
+        </div> -->
 
     
         <!-- Product Section -->
@@ -49,17 +49,31 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="image">Upload Image:</label>
-                    <input type="file" name="image" id="image">
+                    <input type="file" name="image">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Product Name:</label>
+                    <input type="text" name="name">
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Enter Description:</label>
-                    <input type="text" name="description" id="description">
+                    <label for="description">Enter quantity:</label>
+                    <select name="des">
+                        <option value="500g">500g</option>
+                        <option value="750g">500g</option>
+                        <option value="1kg">1kg</option>
+                        <option value="2kg">2kg</option>
+                        <option value="5kg">5kg</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="price">Enter Price:</label>
-                    <input type="text" name="price" id="price">
+                    <input type="text" name="price">
+                </div>
+                <div class="form-group">
+                    <label for="offer price">Enter OfferPrice:</label>
+                    <input type="text" name="offerprice">
                 </div>
 
                 <div class="form-group">

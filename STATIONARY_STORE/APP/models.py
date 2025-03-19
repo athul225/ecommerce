@@ -16,8 +16,10 @@ class admin(models.Model):
 class Product(models.Model):
     image = models.ImageField(upload_to='product_images/')
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    des= models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    offerprice = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    
     
     
     def __str__(self):

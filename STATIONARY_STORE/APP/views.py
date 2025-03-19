@@ -34,9 +34,7 @@ def login(request):
     
     return render(request,'login.html')
 
-def firstpage(request):
-    
-    return render(request,'firstpage.html')
+
 
 
 def logout(request):
@@ -82,11 +80,25 @@ def adminregister(request):
     return render(request,'adminregister.html')
 
 def index(request):
+    products=Product.objects.all()
+    if request.method=='POST':
+        image=request.FILES['image']
+        name=request.POST['name']
+        des=request.POST['des']
+        price=request.POST['price']
+        offerprice=request.POST['offerprice']
+        
+        data=Product.objects.create(image=image,name=name,des=des,price=price,offerprice=offerprice)
+        data.save()
+        return redirect(index)
 
-    return render(request,'index.html')
+    return render(request,'index.html',{'docs':products})
 
 
 def product(request):
     products = Product.objects.all()
 
     return render(request, 'index.html', {'products': products})
+def firstpage(request):
+    
+    return render(request,'firstpage.html')

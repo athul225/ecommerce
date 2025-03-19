@@ -168,9 +168,10 @@
         <div class="products">
             {% for product in products %}
             <div class="product">
-                <img src="{% static 'image/image copy 4.png' %}" alt="{{ product.name }}" class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product">
                 <h3>{{ product.name }}</h3>
                 <p>${{ product.price }}</p>
+                <p>{{ product.description }}</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
             {% endfor %}
