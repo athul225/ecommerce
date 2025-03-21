@@ -10,4 +10,5 @@ urlpatterns=[
     path('index',views.index),
     path('adminregister',views.adminregister),
     path('products', views.product, name='product_list'),
+    path('productitems', views.product_items),
 ]

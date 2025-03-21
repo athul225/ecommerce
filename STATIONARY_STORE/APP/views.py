@@ -100,5 +100,10 @@ def product(request):
 
     return render(request, 'index.html', {'products': products})
 def firstpage(request):
-    
-    return render(request,'firstpage.html')
+    products = Product.objects.all()
+    return render(request,'firstpage.html',{'products':products})
+
+def product_items(request):
+    products = Product.objects.all()
+
+    return render(request, 'product_items.html',{'products':products})

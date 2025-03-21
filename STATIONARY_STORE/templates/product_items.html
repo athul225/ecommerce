@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/product_items.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <a href="#"><img src="{% static 'image/image.png' %}" alt="Logo" height="100px"></a>
+
+            <form action="#" method="get">
+                <div class="search-container">
+                    <input type="text" name="search" placeholder="Search Products..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <img src="https://media.istockphoto.com/id/942243214/vector/search-icon.jpg?s=612x612&w=0&k=20&c=hlfzfYxoj7wyLKxwGf8AuU6RmVDguLVK58CdXiU3lgs=" alt="search" height="20px" width="20px">
+                    </button>
+                </div>
+            </form>
+
+            <div class="nav-links">
+                <a href="../productitems">Home</a>
+                <a href="../index">Add Product</a>
+                <a href="../adminlogin">Logout</a>
+            </div>
+        </nav>
+        <div class="products">
+            {% for product in products %}
+            <div class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product">
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+                <p>{{ product.description }}</p>
+                <button class="update">Update</button>
+                <button class="delete">Delete</button>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+</body>
+</html>
