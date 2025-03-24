@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product List</title>
     <link rel="stylesheet" href="{% static 'css/product_items.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
 </head>
@@ -28,6 +28,7 @@
                 <a href="../adminlogin">Logout</a>
             </div>
         </nav>
+
         <div class="products">
             {% for product in products %}
             <div class="product">
@@ -35,13 +36,20 @@
                 <h3>{{ product.name }}</h3>
                 <p>${{ product.price }}</p>
                 <p>{{ product.description }}</p>
-                <button class="update">Update</button>
-                <button class="delete">Delete</button>
+                <div class="buttons">
+                    <!-- Update Button -->
+                    
+                        <button class="update">Update</button>
+                    </a>
+                    <!-- Delete Button -->
+                    <form action="../deleteproduct" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="delete">Delete</button>
+                    </form>
+                </div>
             </div>
             {% endfor %}
         </div>
-
-
     </div>
 </body>
 </html>

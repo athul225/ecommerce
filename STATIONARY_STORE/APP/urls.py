@@ -11,4 +11,6 @@ urlpatterns=[
     path('adminregister',views.adminregister),
     path('products', views.product, name='product_list'),
     path('productitems', views.product_items),
+    path('deleteproduct', views.delete_product),
+
 ]
