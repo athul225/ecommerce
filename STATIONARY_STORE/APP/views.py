@@ -108,6 +108,13 @@ def product_items(request):
     products = Product.objects.all()
 
     return render(request, 'product_items.html',{'products':products})
+
 def delete_product(request,pk): 
     Product.objects.filter(pk=pk).delete()
     return redirect(index)
+
+def allproduct(request):
+    products=Product.objects.all()
+    
+    return render(request,'allproduct.html',{'products':products})
+    

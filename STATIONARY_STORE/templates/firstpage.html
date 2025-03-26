@@ -23,8 +23,8 @@
             </form>
 
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
+                <a href="../firstpage">Home</a>
+                <a href="../allproduct">All Products</a>
                 <a href="#">Services</a>
                 <a href="../">Logout</a>
             </div>
@@ -38,7 +38,7 @@
             <button type="submit" class="cart">Cart</button>
         </div>
         <div class="ad">
-            <img src="{% static 'image/image copy 2.png' %}" alt="veg" height="800px" width="100%">
+           <a href=""> <img src="{% static 'image/image copy 2.png' %}" alt="veg" height="800px" width="100%"></a>
 
         </div>
         <div class="fru">
@@ -50,8 +50,8 @@
             <div class="product">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product">
                 <h3>{{ product.name }}</h3>
-                <p>${{ product.price }}</p>
-                <p>{{ product.offerprice }}</p>
+                <del><p>{{ product.price }} ₹</p></del>
+                <p class="p1">{{ product.offerprice }} ₹</p>
                 <p>{{ product.description }}</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>

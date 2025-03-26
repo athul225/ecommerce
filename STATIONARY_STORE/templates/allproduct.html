@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
-    <link rel="stylesheet" href="{% static 'css/product_items.css' %}">
+    <link rel="stylesheet" href="{% static 'css/allproduct.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
 </head>
 <body>
@@ -23,30 +23,24 @@
             </form>
 
             <div class="nav-links">
-                <a href="../productitems">Home</a>
-                <a href="../index">Add Product</a>
+                <a href="../firstpage">Home</a>
+                <a href="">About</a>
                 <a href="../adminlogin">Logout</a>
             </div>
         </nav>
 
+        <div class="fru">
+            <h3>Fruits</h3>
+        </div>
         <div class="products">
             {% for product in products %}
             <div class="product">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
                 <h3>{{ product.name }}</h3>
-                <p>${{ product.price }}</p>
+                <del><p>{{ product.price }} ₹</p></del>
+                <p class="offer-price">{{ product.offerprice }} ₹</p>
                 <p>{{ product.description }}</p>
-                <div class="buttons">
-                    <!-- Update Button -->
-                    
-                        <button class="update">Update</button>
-                    </a>
-                    <!-- Delete Button -->
-                    <form action="../deleteproduct/{{data.pk}}" method="post" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="delete">Delete</button>
-                    </form>
-                </div>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
             {% endfor %}
         </div>
