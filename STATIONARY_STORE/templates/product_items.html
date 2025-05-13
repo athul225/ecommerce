@@ -31,23 +31,24 @@
 
         <div class="products">
             {% for product in products %}
+            <!-- Inside your for loop -->
             <div class="product">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product">
                 <h3>{{ product.name }}</h3>
                 <p>${{ product.price }}</p>
-                <p>{{ product.description }}</p>
+                <p>{{ product.des }}</p>
                 <div class="buttons">
-                    <!-- Update Button -->
-                    
-                        <button class="update">Update</button>
-                    </a>
+                    <!-- Update Button (placeholder, fix logic if needed) -->
+                    <a href="#"><button class="update">Update</button></a>
+
                     <!-- Delete Button -->
-                    <form action="../deleteproduct/{{data.pk}}" method="post" style="display:inline;">
+                    <form action="{% url 'delete_product' product.id %}" method="post" style="display:inline;">
                         {% csrf_token %}
                         <button type="submit" class="delete">Delete</button>
                     </form>
                 </div>
             </div>
+
             {% endfor %}
         </div>
     </div>

@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
+from .models import Product
 
 # Create your views here.
 def register(request):
@@ -109,9 +110,12 @@ def product_items(request):
 
     return render(request, 'product_items.html',{'products':products})
 
-def delete_product(request,pk): 
-    Product.objects.filter(pk=pk).delete()
-    return redirect(index)
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('index')
+    return redirect('product_items')
 
 def allproduct(request):
     products=Product.objects.all()
