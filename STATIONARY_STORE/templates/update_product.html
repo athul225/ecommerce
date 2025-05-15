@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="{% static 'css/update_product.css' %}">
+</head>
+<body>
+    <h2>Update Product</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ product.name }}" required><br><br>
+
+        <label for="des">Description:</label>
+        <textarea name="des" required>{{ product.des }}</textarea><br><br>
+
+        <label for="price">Price:</label>
+        <input type="text" name="price" value="{{ product.price }}" required><br><br>
+
+        <label for="offerprice">Offer Price:</label>
+        <input type="text" name="offerprice" value="{{ product.offerprice }}"><br><br>
+
+        <label for="image">Image:</label>
+        <input type="file" name="image"><br>
+        <img src="{{ product.image.url }}" alt="Product Image" width="100"><br><br>
+
+        <button type="submit">Update Product</button>
+    </form>
+
+    <a href="{% url 'product_items' %}">Back to Products</a>
+</body>
+</html>

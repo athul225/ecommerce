@@ -117,6 +117,25 @@ def delete_product(request, product_id):
         return redirect('index')
     return redirect('product_items')
 
+def update_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.method == 'POST':
+        product.name = request.POST.get('name')
+        product.des = request.POST.get('des')
+        product.price = request.POST.get('price')
+        product.offerprice = request.POST.get('offerprice')
+        
+        if 'image' in request.FILES:
+            product.image = request.FILES['image']
+        
+        product.save()
+        return redirect('product_items')
+
+    return render(request, 'update_product.html', {'product': product})
+
+
+
 def allproduct(request):
     products=Product.objects.all()
     

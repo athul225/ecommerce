@@ -13,5 +13,7 @@ urlpatterns = [
     path('adminregister', views.adminregister, name='adminregister'),
     path('productitems', views.product_items, name='product_items'),
     path('delete/<int:product_id>/', views.delete_product, name='delete_product'),
+    path('update/<int:product_id>/', views.update_product, name='update_product'),
+
     path('allproduct', views.allproduct, name='allproduct'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

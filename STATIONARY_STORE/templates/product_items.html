@@ -38,9 +38,10 @@
                 <p>${{ product.price }}</p>
                 <p>{{ product.des }}</p>
                 <div class="buttons">
-                    <!-- Update Button (placeholder, fix logic if needed) -->
-                    <a href="#"><button class="update">Update</button></a>
+                   <!-- Add this inside the <div class="buttons"> for each product -->
+                    <a href="{% url 'update_product' product.id %}" class="update">Update</a>
 
+                   
                     <!-- Delete Button -->
                     <form action="{% url 'delete_product' product.id %}" method="post" style="display:inline;">
                         {% csrf_token %}

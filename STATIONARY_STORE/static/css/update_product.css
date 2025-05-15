@@ -1,0 +1,88 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page heading */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form container */
+form {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Form labels */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* Input fields and textarea */
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Product image preview */
+img {
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* Submit button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Back link */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #004080;
+}
